@@ -1,4 +1,5 @@
 input.onButtonPressed(Button.A, function () {
+    brightLevel = 255
     if (diceSides == 4) {
         diceSides = 12
         basic.showLeds(`
@@ -50,6 +51,7 @@ input.onButtonPressed(Button.A, function () {
     basic.pause(1000)
 })
 input.onButtonPressed(Button.B, function () {
+    brightLevel = 255
     if (diceSides == 4) {
         diceSides = 6
         basic.showLeds(`
