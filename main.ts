@@ -1,13 +1,13 @@
 input.onButtonPressed(Button.A, function () {
     brightLevel = 255
     if (diceSides == 4) {
-        diceSides = 12
+        diceSides = 20
         basic.showLeds(`
             . . . . .
-            . . . . .
-            # # # # .
-            # # # # .
-            # # # # .
+            # # # # #
+            # # # # #
+            # # # # #
+            # # # # #
             `)
     } else if (diceSides == 6) {
         diceSides = 4
@@ -45,8 +45,17 @@ input.onButtonPressed(Button.A, function () {
             # # # # #
             # # # # #
             `)
-    } else {
+    } else if (diceSides == 20) {
         diceSides = 12
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            # # # # .
+            # # # # .
+            # # # # .
+            `)
+    } else {
+        diceSides = 20
     }
     basic.pause(1000)
 })
@@ -89,6 +98,15 @@ input.onButtonPressed(Button.B, function () {
             # # # # .
             `)
     } else if (diceSides == 12) {
+        diceSides = 20
+        basic.showLeds(`
+            . . . . .
+            # # # # #
+            # # # # #
+            # # # # #
+            # # # # #
+            `)
+    } else if (diceSides == 20) {
         diceSides = 4
         basic.showLeds(`
             . . . . .
@@ -204,6 +222,85 @@ input.onGesture(Gesture.ThreeG, function () {
             # # . . #
             # # . . .
             `)
+    } else if (diceValue == 13) {
+        basic.showLeds(`
+            # # . . .
+            # # . . #
+            # # . # .
+            # # # . .
+            # # . . .
+            `)
+    } else if (diceValue == 14) {
+        basic.showLeds(`
+            # # . . .
+            # # # . #
+            # # . . .
+            # # # . #
+            # # . . .
+            `)
+    } else if (diceValue == 15) {
+        basic.showLeds(`
+            # # . . .
+            # # # . #
+            # # . # .
+            # # # . #
+            # # . . .
+            `)
+    } else if (diceValue == 16) {
+        basic.showLeds(`
+            # # . . .
+            # # # # #
+            # # . . .
+            # # # # #
+            # # . . .
+            `)
+    } else if (diceValue == 17) {
+        basic.showLeds(`
+            # # . . .
+            # # # # #
+            # # . # .
+            # # # # #
+            # # . . .
+            `)
+    } else if (diceValue == 18) {
+        basic.showLeds(`
+            # # . . .
+            # # # # #
+            # # # . #
+            # # # # #
+            # # . . .
+            `)
+    } else if (diceValue == 19) {
+        basic.showLeds(`
+            # # . . .
+            # # # # #
+            # # # # #
+            # # # # #
+            # # . . .
+            `)
+    } else if (diceValue == 20) {
+        basic.showLeds(`
+            # # # # #
+            # # . # #
+            # . . . #
+            # # . # #
+            # # # # #
+            `)
+        basic.showLeds(`
+            . . . . .
+            . . # . .
+            . # # # .
+            . . # . .
+            . . . . .
+            `)
+        brightLevel = 255
+        basic.showLeds(`
+            # # # # #
+            # # . # #
+            # . . . #
+            # # . # #
+            # # # # #
+            `)
     } else {
         basic.showLeds(`
             . # # # .
@@ -218,7 +315,7 @@ input.onGesture(Gesture.ThreeG, function () {
 let diceValue = 0
 let brightLevel = 0
 let diceSides = 0
-diceSides = 12
+diceSides = 6
 basic.showString("AB=type")
 basic.showString("SHAKE=roll")
 basic.forever(function () {
