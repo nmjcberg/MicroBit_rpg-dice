@@ -102,7 +102,10 @@ input.onButtonPressed(Button.B, function () {
     }
     basic.pause(1000)
 })
-input.onGesture(Gesture.Shake, function () {
+input.onGesture(Gesture.ThreeG, function () {
+    brightLevel = 255
+    basic.showIcon(IconNames.Target)
+    basic.showIcon(IconNames.SmallDiamond)
     brightLevel = 255
     diceValue = randint(1, diceSides)
     if (diceValue == 1) {
@@ -220,7 +223,7 @@ basic.showString("AB=type")
 basic.showString("SHAKE=roll")
 basic.forever(function () {
     led.setBrightness(brightLevel)
-    brightLevel += -5
+    brightLevel += -2
     if (brightLevel < 0) {
         brightLevel = 0
     }
